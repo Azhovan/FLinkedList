@@ -3,9 +3,17 @@
     "auther" :"Jabar asadi",
     "description": "solve trip problem with complexity O(n)",
     "require": {},
+    "require-dev":{
+        "phpunit/phpunit":"^5.5"
+    },
     "autoload" :{
         "psr-4":{
             "trip\\":"src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "trip\\test\\":"tests/"
         }
     }
 }

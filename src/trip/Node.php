@@ -80,5 +80,23 @@ class Node
         $this->next = $next;
     }
 
+    /**
+     * @return Node
+     */
+    public function node() : Node
+    {
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+
+
 
 }
