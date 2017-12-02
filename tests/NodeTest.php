@@ -10,6 +10,16 @@ use trip\Node;
 class NodeTest extends TestCase
 {
 
+    public function setUp()
+    {
+
+    }
+
+    public function tearDown()
+    {
+
+    }
+
     public function testData()
     {
         $data = array(
@@ -17,7 +27,11 @@ class NodeTest extends TestCase
             'to' => 'to'
         );
         $node = new Node($data);
-        $this->assertEquals($data, $node->node()->getData(), "cannot fetch node data");
+        $this->assertEquals(
+            $data,
+            $node->node()->getData(),
+            "cannot fetch node data"
+        );
     }
 
     public function testDataStructure()
@@ -27,8 +41,16 @@ class NodeTest extends TestCase
             'to' => 'to'
         );
         $node = new Node($data);
-        $this->assertEquals($data['from'], $node->node()->getFrom(), "cannot get attribute from in the node structure");
-        $this->assertEquals($data['to'], $node->node()->getTo(), "cannot get attribute from in the node structure");
+        $this->assertEquals(
+            $data['from'],
+            $node->node()->getFrom(),
+            "cannot get attribute from in the node structure"
+        );
+        $this->assertEquals(
+            $data['to'],
+            $node->node()->getTo(),
+            "cannot get attribute from in the node structure"
+        );
     }
 
     public function testNext()
@@ -47,10 +69,14 @@ class NodeTest extends TestCase
 
         $node1->next($node2);
 
-        $this->assertEquals($node2, $node1->next(), "cannot set next node");
+        $this->assertEquals(
+            $node2,
+            $node1->next(),
+            "cannot set next node"
+        );
     }
 
-    public function testChangeNextPointerWithAnotherValue()
+    public function testChangeNextPointerWithAnotherNode()
     {
         $data1 = array(
             'from' => 'from1',
@@ -73,7 +99,11 @@ class NodeTest extends TestCase
         $node1->next($node2);
         $node1->next($node3);
 
-        $this->assertEquals($node3, $node1->next(), "cannot change the pointer");
+        $this->assertEquals(
+            $node3,
+            $node1->next(),
+            "cannot change the pointer"
+        );
     }
 
 
