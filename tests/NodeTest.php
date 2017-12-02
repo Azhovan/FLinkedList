@@ -48,8 +48,32 @@ class NodeTest extends TestCase
         $node1->next($node2);
 
         $this->assertEquals($node2, $node1->next(), "cannot set next node");
+    }
 
+    public function testChangeNextPointerWithAnotherValue()
+    {
+        $data1 = array(
+            'from' => 'from1',
+            'to' => 'to1'
+        );
+        $node1 = new Node($data1);
 
+        $data2 = array(
+            'from' => 'from2',
+            'to' => 'to2'
+        );
+        $node2 = new Node($data2);
+
+        $data3 = array(
+            'from' => 'from2',
+            'to' => 'to2'
+        );
+        $node3 = new Node($data3);
+
+        $node1->next($node2);
+        $node1->next($node3);
+
+        $this->assertEquals($node3, $node1->next(), "cannot change the pointer");
     }
 
 
