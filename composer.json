@@ -1,0 +1,11 @@
+{
+    "name": "asadijabar/trip",
+    "auther" :"Jabar asadi",
+    "description": "solve trip problem with complexity O(n)",
+    "require": {},
+    "autoload" :{
+        "psr-4":{
+            "trip\\":"src/"
+        }
+    }
+}
